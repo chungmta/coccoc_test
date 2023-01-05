@@ -163,7 +163,7 @@ const LoginPage = () => {
           <Form.Item wrapperCol={{ offset: 0, span: 24 }}>
             {!isProcess ? (
               <Button
-                className={classNames('mt-3 rounded-sm', {
+                className={classNames('mt-3 rounded-sm font-bold', {
                   'bg-primary': isFormReady,
                 })}
                 disabled={!isFormReady}
@@ -173,7 +173,7 @@ const LoginPage = () => {
                 LOGIN
               </Button>
             ) : (
-              <div>PROCESSING...</div>
+              <div className=' font-bold'>PROCESSING...</div>
             )}
           </Form.Item>
         </Form>
