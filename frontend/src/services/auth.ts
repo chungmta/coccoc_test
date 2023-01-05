@@ -1,7 +1,8 @@
 /**
  * This represents some generic auth provider API, like Firebase.
  */
-import users from './mock/users.json';
+import { login } from './api';
+// import users from './mock/users.json';
 
 const fakeAuthProvider = {
   isAuthenticated: false,
@@ -9,13 +10,18 @@ const fakeAuthProvider = {
   signin(email: string, password: string): Promise<Error | any> {
     fakeAuthProvider.isAuthenticated = true;
 
-    const i = users.findIndex((user) => user.email === email);
+    return login({
+      email,
+      password,
+    });
 
-    if (i >= 0) {
-      return Promise.resolve(users[i]);
-    } else {
-      return Promise.reject(new Error('login failure'));
-    }
+    // const i = users.findIndex((user) => user.email === email);
+
+    // if (i >= 0) {
+    //   return Promise.resolve(users[i]);
+    // } else {
+    //   return Promise.reject(new Error('login failure'));
+    // }
   },
   signout(callback: VoidFunction) {
     fakeAuthProvider.isAuthenticated = false;

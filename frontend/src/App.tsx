@@ -1,8 +1,7 @@
 import { AuthProvider, RequireAuth } from './containers/AuthenticatedGuard';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
-import { Routes, Route, useNavigate, Outlet } from 'react-router-dom';
-import { useAuth } from './hooks/useAuth';
+import { Routes, Route, Outlet } from 'react-router-dom';
 import ErrorPage from './pages/ErrorPage';
 import { Fragment } from 'react';
 import { ConfigProvider } from 'antd';
@@ -49,24 +48,24 @@ function Layout() {
   );
 }
 
-function AuthStatus() {
-  const auth = useAuth();
-  const navigate = useNavigate();
+// function AuthStatus() {
+//   const auth = useAuth();
+//   const navigate = useNavigate();
 
-  if (!auth.user) {
-    return <p>You are not logged in.</p>;
-  }
+//   if (!auth.user) {
+//     return <p>You are not logged in.</p>;
+//   }
 
-  return (
-    <p>
-      Welcome {auth.user}!{' '}
-      <button
-        onClick={() => {
-          auth.signout(() => navigate('/'));
-        }}
-      >
-        Sign out
-      </button>
-    </p>
-  );
-}
+//   return (
+//     <p>
+//       Welcome {auth.user}!{' '}
+//       <button
+//         onClick={() => {
+//           auth.signout(() => navigate('/'));
+//         }}
+//       >
+//         Sign out
+//       </button>
+//     </p>
+//   );
+// }

@@ -22,8 +22,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   ) => {
     return fakeAuthProvider
       .signin(userName, passWord)
-      .then((user) => {
-        setUser(user);
+      .then((res) => {
+        console.log(res);
+
+        if (res.statusCode === 401) {
+          return new Error(res.message);
+        }
+        setUser(res);
         callback();
       })
       .catch((err) => {

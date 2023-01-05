@@ -1,7 +1,6 @@
 import { Button, Checkbox, Form, Input, Typography } from 'antd';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
-// import IconEye from '../assets/icons/eye.svg';
 import { useState } from 'react';
 import IconEye from '../components/Icons/IconEye';
 import IconCautionCircle from '../components/Icons/IconCautionCircle';
@@ -93,7 +92,7 @@ const LoginPage = () => {
                 required: true,
                 message: (
                   <div className="flex items-center">
-                    <IconCautionCircle className="w-[15px] h-[15px] mr-1" />
+                    <IconCautionCircle className="w-[13px] h-[13px] mr-1" />
                     Required
                   </div>
                 ),
@@ -112,7 +111,7 @@ const LoginPage = () => {
                 required: true,
                 message: (
                   <div className="flex items-center">
-                    <IconCautionCircle className="w-[15px] h-[15px] mr-1" />
+                    <IconCautionCircle className="w-[13px] h-[13px] mr-1" />
                     Required
                   </div>
                 ),
@@ -155,8 +154,8 @@ const LoginPage = () => {
           </div>
 
           {error && (
-            <div className="flex items-center mt-0" style={{ color: 'red' }}>
-              <IconCautionCircle className="w-[15px] h-[15px] mr-2" />
+            <div className="flex items-center mt-1" style={{ color: 'red' }}>
+              <IconCautionCircle className="w-[13px] h-[13px] mr-2" />
               Account information incorrect
             </div>
           )}
