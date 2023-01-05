@@ -4,7 +4,7 @@
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
   "scripts": {
-    "install": "npm i && node ./scripts/install-dependencies.js",
+    "install-deps": "node ./scripts/install-dependencies",
     "start": "concurrently --kill-others \"npm run start:frontend\" \"npm run start:backend\"",
     "start:frontend": "cd frontend && npm start",
     "start:backend": "cd backend && npm start"
